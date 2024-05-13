@@ -15,6 +15,8 @@
 		D72F09E52BF224A3008150D6 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E32BF224A3008150D6 /* BreedImage.swift */; };
 		D72F09E82BF224B6008150D6 /* BreedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E72BF224B6008150D6 /* BreedResponse.swift */; };
 		D72F09EA2BF224C6008150D6 /* BreedImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */; };
+		D72F09EC2BF2254D008150D6 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09EB2BF2254D008150D6 /* APIFactory.swift */; };
+		D72F09EF2BF22555008150D6 /* APIFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */; };
 		D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */; };
 		D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */; };
 		D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */; };
@@ -54,6 +56,8 @@
 		D72F09E32BF224A3008150D6 /* BreedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
 		D72F09E72BF224B6008150D6 /* BreedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedResponse.swift; sourceTree = "<group>"; };
 		D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageResponse.swift; sourceTree = "<group>"; };
+		D72F09EB2BF2254D008150D6 /* APIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFactoryImpl.swift; sourceTree = "<group>"; };
 		D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		D7DC2A572BF14AAD008BA68D /* CatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,7 @@
 		D72F09CD2BF21FBC008150D6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D72F09EB2BF2254D008150D6 /* APIFactory.swift */,
 				D72F09CE2BF21FC5008150D6 /* Manager */,
 				D72F09D92BF2244C008150D6 /* Services */,
 				D72F09E12BF22496008150D6 /* Models */,
@@ -142,6 +147,7 @@
 		D72F09D62BF2224A008150D6 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				D72F09ED2BF22555008150D6 /* Factories */,
 				D7D6DB902BF15CD8009F4B58 /* Manager */,
 				D72F09DC2BF22473008150D6 /* Services */,
 				D72F09E62BF224A7008150D6 /* Models */,
@@ -181,6 +187,14 @@
 				D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D72F09ED2BF22555008150D6 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		D7D6DB902BF15CD8009F4B58 /* Manager */ = {
@@ -442,7 +456,9 @@
 				D72F09DE2BF2247F008150D6 /* BreedsServiceImpl.swift in Sources */,
 				D7DC2A5D2BF14AAD008BA68D /* ContentView.swift in Sources */,
 				D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */,
+				D72F09EC2BF2254D008150D6 /* APIFactory.swift in Sources */,
 				D72F09EA2BF224C6008150D6 /* BreedImageResponse.swift in Sources */,
+				D72F09EF2BF22555008150D6 /* APIFactoryImpl.swift in Sources */,
 				D7DC2A5F2BF14AAD008BA68D /* Item.swift in Sources */,
 				D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */,
 				D72F09E52BF224A3008150D6 /* BreedImage.swift in Sources */,
