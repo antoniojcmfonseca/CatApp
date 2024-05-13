@@ -13,6 +13,10 @@ class APIFactoryImpl: APIFactory {
         BreedsServiceImpl(networkManager: createNetworkManager())
     }
     
+    func createImageService() -> ImageService {
+        ImageServiceImpl()
+    }
+    
     private func createNetworkManager() -> NetworkManager {
         NetworkManagerImpl.shared
     }

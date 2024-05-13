@@ -22,6 +22,8 @@ struct CatAppApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    var apiFactory: APIFactory = APIFactoryImpl()
 
     var body: some Scene {
         WindowGroup {
