@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		4A485C3A07A17F9C7B4CF367 /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */; };
 		D72F09D82BF2226A008150D6 /* NetworkManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09D72BF2226A008150D6 /* NetworkManagerImpl.swift */; };
+		D72F09DB2BF2245F008150D6 /* BreedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09DA2BF2245F008150D6 /* BreedService.swift */; };
+		D72F09DE2BF2247F008150D6 /* BreedsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09DD2BF2247F008150D6 /* BreedsServiceImpl.swift */; };
+		D72F09E42BF224A3008150D6 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E22BF224A3008150D6 /* Breed.swift */; };
+		D72F09E52BF224A3008150D6 /* BreedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E32BF224A3008150D6 /* BreedImage.swift */; };
+		D72F09E82BF224B6008150D6 /* BreedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E72BF224B6008150D6 /* BreedResponse.swift */; };
+		D72F09EA2BF224C6008150D6 /* BreedImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */; };
+		D72F09EC2BF2254D008150D6 /* APIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09EB2BF2254D008150D6 /* APIFactory.swift */; };
+		D72F09EF2BF22555008150D6 /* APIFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */; };
+		D72F09F12BF226DA008150D6 /* BreedsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09F02BF226DA008150D6 /* BreedsServiceTest.swift */; };
+		D72F09F52BF22AB5008150D6 /* breeds.json in Resources */ = {isa = PBXBuildFile; fileRef = D72F09F42BF22AB5008150D6 /* breeds.json */; };
 		D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */; };
 		D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */; };
 		D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */; };
@@ -42,6 +52,16 @@
 		2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatApp.release.xcconfig"; path = "Target Support Files/Pods-CatApp/Pods-CatApp.release.xcconfig"; sourceTree = "<group>"; };
 		D72F09D72BF2226A008150D6 /* NetworkManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerImpl.swift; sourceTree = "<group>"; };
+		D72F09DA2BF2245F008150D6 /* BreedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedService.swift; sourceTree = "<group>"; };
+		D72F09DD2BF2247F008150D6 /* BreedsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedsServiceImpl.swift; sourceTree = "<group>"; };
+		D72F09E22BF224A3008150D6 /* Breed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		D72F09E32BF224A3008150D6 /* BreedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedImage.swift; sourceTree = "<group>"; };
+		D72F09E72BF224B6008150D6 /* BreedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedResponse.swift; sourceTree = "<group>"; };
+		D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageResponse.swift; sourceTree = "<group>"; };
+		D72F09EB2BF2254D008150D6 /* APIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
+		D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFactoryImpl.swift; sourceTree = "<group>"; };
+		D72F09F02BF226DA008150D6 /* BreedsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsServiceTest.swift; sourceTree = "<group>"; };
+		D72F09F42BF22AB5008150D6 /* breeds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = breeds.json; sourceTree = "<group>"; };
 		D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		D7DC2A572BF14AAD008BA68D /* CatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +132,10 @@
 		D72F09CD2BF21FBC008150D6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				D72F09EB2BF2254D008150D6 /* APIFactory.swift */,
 				D72F09CE2BF21FC5008150D6 /* Manager */,
+				D72F09D92BF2244C008150D6 /* Services */,
+				D72F09E12BF22496008150D6 /* Models */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -128,9 +151,70 @@
 		D72F09D62BF2224A008150D6 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				D72F09ED2BF22555008150D6 /* Factories */,
 				D7D6DB902BF15CD8009F4B58 /* Manager */,
+				D72F09DC2BF22473008150D6 /* Services */,
+				D72F09E62BF224A7008150D6 /* Models */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		D72F09D92BF2244C008150D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09DA2BF2245F008150D6 /* BreedService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D72F09DC2BF22473008150D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09DD2BF2247F008150D6 /* BreedsServiceImpl.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D72F09E12BF22496008150D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09E22BF224A3008150D6 /* Breed.swift */,
+				D72F09E32BF224A3008150D6 /* BreedImage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D72F09E62BF224A7008150D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09E72BF224B6008150D6 /* BreedResponse.swift */,
+				D72F09E92BF224C6008150D6 /* BreedImageResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D72F09ED2BF22555008150D6 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09EE2BF22555008150D6 /* APIFactoryImpl.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		D72F09F22BF228F0008150D6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09F32BF228F8008150D6 /* Mocks */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D72F09F32BF228F8008150D6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D72F09F42BF22AB5008150D6 /* breeds.json */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		D7D6DB902BF15CD8009F4B58 /* Manager */ = {
@@ -189,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D7DC2A6D2BF14AAE008BA68D /* CatAppTests.swift */,
+				D72F09F02BF226DA008150D6 /* BreedsServiceTest.swift */,
 			);
 			path = CatAppTests;
 			sourceTree = "<group>";
@@ -207,6 +292,7 @@
 			children = (
 				D72F09C92BF21F6A008150D6 /* Interface */,
 				D72F09D62BF2224A008150D6 /* Implementation */,
+				D72F09F22BF228F0008150D6 /* Utils */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -318,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7DC2A642BF14AAE008BA68D /* Preview Assets.xcassets in Resources */,
+				D72F09F52BF22AB5008150D6 /* breeds.json in Resources */,
 				D7DC2A612BF14AAE008BA68D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,11 +472,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72F09E82BF224B6008150D6 /* BreedResponse.swift in Sources */,
+				D72F09E42BF224A3008150D6 /* Breed.swift in Sources */,
 				D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */,
+				D72F09DB2BF2245F008150D6 /* BreedService.swift in Sources */,
+				D72F09DE2BF2247F008150D6 /* BreedsServiceImpl.swift in Sources */,
 				D7DC2A5D2BF14AAD008BA68D /* ContentView.swift in Sources */,
 				D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */,
+				D72F09EC2BF2254D008150D6 /* APIFactory.swift in Sources */,
+				D72F09EA2BF224C6008150D6 /* BreedImageResponse.swift in Sources */,
+				D72F09EF2BF22555008150D6 /* APIFactoryImpl.swift in Sources */,
 				D7DC2A5F2BF14AAD008BA68D /* Item.swift in Sources */,
 				D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */,
+				D72F09E52BF224A3008150D6 /* BreedImage.swift in Sources */,
 				D72F09D82BF2226A008150D6 /* NetworkManagerImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72F09F12BF226DA008150D6 /* BreedsServiceTest.swift in Sources */,
 				D7DC2A6E2BF14AAE008BA68D /* CatAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
