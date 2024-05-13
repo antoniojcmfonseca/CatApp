@@ -27,10 +27,18 @@ final class BreedsServiceTest: XCTestCase {
     
     func testGetBreedsSuccess() async throws {
         
+        guard let url = Bundle.main.url(forResource: "breeds", withExtension: "json") else {
+            XCTFail("Failed to load local JSON file")
+            return
+        }
+        
+        mockNetworkManager.jsonData = try? Data(contentsOf: url)
+        
         do {
             let breeds = try await service.getBreeds()
             XCTAssertEqual(breeds.count, 1, "Should return one breed")
             XCTAssertEqual(breeds.first?.name, "Abyssinian", "Fetched breed's name should be 'Abyssinian'")
+            XCTAssertEqual(breeds.first?.origin, "Egypt", "Fetched breed's origin should be 'Egypt'")
         } catch {
             XCTFail("Breed fetch failed with error: \(error)")
         }
