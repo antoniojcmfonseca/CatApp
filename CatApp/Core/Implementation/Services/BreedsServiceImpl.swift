@@ -17,16 +17,7 @@ class BreedsServiceImpl: BreedService {
     
     func getBreeds() async throws -> [Breed] {
         let path = "v1/breeds"
-        
-        var breeds: [Breed] = []
-        
-        do {
-            let breedResponse: [BreedResponse] = try await networkManager.getRequest(path: path, parameters: nil)
-            breeds = breedResponse
-        } catch let error {
-            print("Error: \(error.localizedDescription)")
-        }
-        
-        return breeds
+        let breedResponse: [BreedResponse] = try await networkManager.getRequest(path: path, parameters: nil)
+        return breedResponse
     }
 }
