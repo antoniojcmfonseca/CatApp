@@ -10,6 +10,7 @@ import Foundation
 class BreedsViewModel: ObservableObject {
     
     @Published var breeds: [BreedViewModel] = []
+    //var favoriteBreeds: [FavoriteBreed]
     
     private var breedService: BreedService
     private var imageService: ImageService

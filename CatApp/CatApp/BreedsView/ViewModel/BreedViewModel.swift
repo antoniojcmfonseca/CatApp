@@ -8,32 +8,45 @@
 import Foundation
 import SwiftUI
 
-class BreedViewModel: Identifiable {
+class BreedViewModel: Identifiable, ObservableObject {
     let id: String
     let name: String
     let origin: String
     let temperament: String
     let description: String
     let lifeSpan: String
-    let image: Image
+    let url: String?
+    
+    @Published var image: Image
     var favorite: Bool
+    
+    private let imageService: ImageService
     
     init(breed: Breed, imageService: ImageService) {
         self.id = breed.id
-        self.name = breed.id
+        self.name = breed.name
         self.origin = breed.origin
         self.temperament = breed.origin
         self.description = breed.description
         self.lifeSpan = breed.lifeSpan
+        self.url = breed.image?.url
         self.favorite = false
+        self.image = Image("placeholder")
         
-        
-        guard let url = breed.image?.url, let uiImage = imageService.getImage(from: url) else {
-            self.image = Image("placeholder")
-            return
+        self.imageService = imageService
+        loadImage()
+    }
+    
+    func loadImage() {
+        Task {
+            guard let url = url, let uiImage = await imageService.getImage(from: url) else {
+                return
+            }
+            
+            await MainActor.run {
+                self.image = Image(uiImage: uiImage)
+            }
         }
-        
-        self.image = Image(uiImage: uiImage)
     }
     
     func setFavoriteState() {
