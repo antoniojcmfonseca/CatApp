@@ -26,8 +26,11 @@ struct CatAppApp: App {
     var apiFactory: APIFactory = APIFactoryImpl()
 
     var body: some Scene {
+        
+        var breedsViewModel = BreedsViewModel(breedService: apiFactory.createBreedService(), imageService: apiFactory.createImageService())
+        
         WindowGroup {
-            ContentView()
+            BreedsView(viewModel: breedsViewModel)
         }
         .modelContainer(sharedModelContainer)
     }
