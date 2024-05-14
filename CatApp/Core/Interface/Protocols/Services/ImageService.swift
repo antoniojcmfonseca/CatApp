@@ -9,5 +9,5 @@ import AlamofireImage
 
 protocol ImageService {
     
-    func getImage(from url: String) async -> UIImage?
+    func getImage(from url: String) -> UIImage?
 }
