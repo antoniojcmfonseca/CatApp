@@ -10,4 +10,6 @@ import Foundation
 protocol APIFactory {
     
     func createBreedService() -> BreedService
+    
+    func createImageService() -> ImageService
 }
