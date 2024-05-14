@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A485C3A07A17F9C7B4CF367 /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */; };
 		D70E6F5F2BF3CA4B0051DC5E /* BreedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E6F5E2BF3CA4B0051DC5E /* BreedCellView.swift */; };
+		D70E6F622BF3CC9E0051DC5E /* BreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E6F612BF3CC9E0051DC5E /* BreedDetailView.swift */; };
 		D72F09D82BF2226A008150D6 /* NetworkManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09D72BF2226A008150D6 /* NetworkManagerImpl.swift */; };
 		D72F09DB2BF2245F008150D6 /* BreedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09DA2BF2245F008150D6 /* BreedService.swift */; };
 		D72F09DE2BF2247F008150D6 /* BreedsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F09DD2BF2247F008150D6 /* BreedsServiceImpl.swift */; };
@@ -58,6 +59,7 @@
 		2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatApp.release.xcconfig"; path = "Target Support Files/Pods-CatApp/Pods-CatApp.release.xcconfig"; sourceTree = "<group>"; };
 		D70E6F5E2BF3CA4B0051DC5E /* BreedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCellView.swift; sourceTree = "<group>"; };
+		D70E6F612BF3CC9E0051DC5E /* BreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailView.swift; sourceTree = "<group>"; };
 		D72F09D72BF2226A008150D6 /* NetworkManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerImpl.swift; sourceTree = "<group>"; };
 		D72F09DA2BF2245F008150D6 /* BreedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedService.swift; sourceTree = "<group>"; };
 		D72F09DD2BF2247F008150D6 /* BreedsServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedsServiceImpl.swift; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 				65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D70E6F602BF3CC8A0051DC5E /* BreedDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D70E6F612BF3CC9E0051DC5E /* BreedDetailView.swift */,
+			);
+			path = BreedDetailView;
 			sourceTree = "<group>";
 		};
 		D72F09C92BF21F6A008150D6 /* Interface */ = {
@@ -294,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				D72F09F62BF2309A008150D6 /* BreedsView */,
+				D70E6F602BF3CC8A0051DC5E /* BreedDetailView */,
 				D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */,
 				D7DC2A5C2BF14AAD008BA68D /* ContentView.swift */,
 				D7DC2A5E2BF14AAD008BA68D /* Item.swift */,
@@ -519,6 +530,7 @@
 				D72F0A052BF25537008150D6 /* ImageServiceImpl.swift in Sources */,
 				D70E6F5F2BF3CA4B0051DC5E /* BreedCellView.swift in Sources */,
 				D72F0A012BF23F25008150D6 /* BreedViewModel.swift in Sources */,
+				D70E6F622BF3CC9E0051DC5E /* BreedDetailView.swift in Sources */,
 				D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */,
 				D72F09DB2BF2245F008150D6 /* BreedService.swift in Sources */,
 				D72F09DE2BF2247F008150D6 /* BreedsServiceImpl.swift in Sources */,
