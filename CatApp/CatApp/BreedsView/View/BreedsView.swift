@@ -23,7 +23,9 @@ struct BreedsView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.filteredBreeds) { breed in
-                            BreedCellView(viewModel: breed)
+                            NavigationLink(destination: BreedDetailView(viewModel: breed)) {
+                                BreedCellView(viewModel: breed)
+                            }
                         }
                     }
                     .padding()
