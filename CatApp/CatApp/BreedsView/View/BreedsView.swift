@@ -18,19 +18,20 @@ struct BreedsView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(viewModel.breeds) { breed in
-                        NavigationLink(destination: BreedDetailView(viewModel: breed)) {
+            VStack {
+                SearchBar(text: $viewModel.searchText)
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(viewModel.filteredBreeds) { breed in
                             BreedCellView(viewModel: breed)
                         }
                     }
+                    .padding()
                 }
-                .padding()
-            }
-            .navigationTitle("Breeds")
-            .onAppear {
-                viewModel.loadBreeds()
+                .navigationTitle("Breeds")
+                .onAppear {
+                    viewModel.loadBreeds()
+                }
             }
         }
     }
