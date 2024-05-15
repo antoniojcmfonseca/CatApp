@@ -10,6 +10,7 @@ import Foundation
 class BreedsViewModel: ObservableObject {
     
     @Published var breeds: [BreedViewModel] = []
+    @Published var searchText: String = ""
     
     private var breedService: BreedService
     private var imageService: ImageService
@@ -19,6 +20,14 @@ class BreedsViewModel: ObservableObject {
         self.imageService = imageService
     }
     
+    var filteredBreeds: [BreedViewModel] {
+        if searchText.isEmpty {
+            return breeds
+        } else {
+            return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
+    }
+    
     func loadBreeds() {
         
         Task {
@@ -26,7 +35,7 @@ class BreedsViewModel: ObservableObject {
             var listOfBreeds: [Breed] = []
             
             do {
-               listOfBreeds = try await breedService.getBreeds()
+                listOfBreeds = try await breedService.getBreeds()
             } catch let error {
                 print(error)
             }
