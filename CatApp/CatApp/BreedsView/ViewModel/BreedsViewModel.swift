@@ -14,6 +14,7 @@ class BreedsViewModel: ObservableObject {
     
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
+    @Published var isOfflineMode: Bool = false
     
     private var breedService: BreedService
     private var imageService: ImageService
@@ -64,9 +65,11 @@ class BreedsViewModel: ObservableObject {
                 self.currentPage = page
                 self.canLoadMorePages = !listOfBreeds.isEmpty
                 self.isLoading = false
+                self.isOfflineMode = self.breeds.isEmpty && listOfBreeds.isEmpty
             } catch let error {
                 print(error)
                 self.isLoading = false
+                self.isOfflineMode = true
             }
             
             var breedViewModel: [BreedViewModel] = []
@@ -75,11 +78,20 @@ class BreedsViewModel: ObservableObject {
                 breedViewModel.append(BreedViewModel(breed: breed, imageService: imageService))
             }
             
+            for favoriteBreed in favoriteBreeds {
+                breedViewModel.append(BreedViewModel(favoriteBreed: favoriteBreed, imageService: imageService))
+            }
+            
             let breedsVM = breedViewModel
             
             await MainActor.run {
                 let matchingBreeds = matchFavorites(breeds: breedsVM)
-                breeds.append(contentsOf: matchingBreeds)
+                
+                var updatedBreeds = breeds
+                updatedBreeds.append(contentsOf: matchingBreeds)
+                
+                breeds = updatedBreeds.removingDuplicatesById()
+                
             }
         }
     }

@@ -17,16 +17,20 @@ struct BreedsView: View {
     ]
     
     var body: some View {
-        TabView {
-            AllBreedsView(viewModel: viewModel)
-                .tabItem {
-                    Label("All Breeds", systemImage: "list.bullet")
-                }
-            
+        if viewModel.isOfflineMode {
             FavoriteBreedsView(viewModel: viewModel)
-                .tabItem {
-                    Label("Favorite Breeds", systemImage: "heart")
-                }
+        } else {
+            TabView {
+                AllBreedsView(viewModel: viewModel)
+                    .tabItem {
+                        Label("All Breeds", systemImage: "list.bullet")
+                    }
+                
+                FavoriteBreedsView(viewModel: viewModel)
+                    .tabItem {
+                        Label("Favorite Breeds", systemImage: "heart")
+                    }
+            }
         }
     }
 }
@@ -76,7 +80,6 @@ struct FavoriteBreedsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                SearchBar(text: $viewModel.searchText)
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.filteredFavoriteBreeds) { breed in
@@ -88,9 +91,6 @@ struct FavoriteBreedsView: View {
                     .padding()
                 }
                 .navigationTitle("Favorite Breeds")
-                .onAppear {
-                    viewModel.loadBreeds()
-                }
             }
         }
     }
