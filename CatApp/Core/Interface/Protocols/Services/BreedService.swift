@@ -9,5 +9,5 @@ import Foundation
 
 protocol BreedService {
     
-    func getBreeds() async throws -> [Breed]
+    func getBreeds(limit: Int, page: Int) async throws -> [Breed]
 }

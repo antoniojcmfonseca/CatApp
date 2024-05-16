@@ -15,8 +15,8 @@ class BreedsServiceImpl: BreedService {
         self.networkManager = networkManager
     }
     
-    func getBreeds() async throws -> [Breed] {
-        let path = "v1/breeds"
+    func getBreeds(limit: Int = 10, page: Int = 0) async throws -> [Breed] {
+        let path = "v1/breeds?limit=\(limit)&page=\(page)"
         let breedResponse: [BreedResponse] = try await networkManager.getRequest(path: path, parameters: nil)
         return breedResponse
     }

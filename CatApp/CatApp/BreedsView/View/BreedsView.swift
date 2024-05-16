@@ -25,6 +25,9 @@ struct BreedsView: View {
                         ForEach(viewModel.filteredBreeds) { breed in
                             NavigationLink(destination: BreedDetailView(viewModel: breed)) {
                                 BreedCellView(viewModel: viewModel, breedViewModel: breed)
+                                    .onAppear {
+                                        viewModel.loadMoreBreedsIfNeeded(currentBreed: breed)
+                                    }
                             }
                         }
                     }
