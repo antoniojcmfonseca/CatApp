@@ -38,6 +38,7 @@
 		D7DC2A782BF14AAE008BA68D /* CatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A772BF14AAE008BA68D /* CatAppUITests.swift */; };
 		D7DC2A7A2BF14AAE008BA68D /* CatAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A792BF14AAE008BA68D /* CatAppUITestsLaunchTests.swift */; };
 		D7E4EAC62BF67F7D0020A40C /* FavoriteBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EAC52BF67F7D0020A40C /* FavoriteBreed.swift */; };
+		D7E4EACE2BF69D120020A40C /* Array+CatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EACD2BF69D120020A40C /* Array+CatApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D7DC2A772BF14AAE008BA68D /* CatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAppUITests.swift; sourceTree = "<group>"; };
 		D7DC2A792BF14AAE008BA68D /* CatAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D7E4EAC52BF67F7D0020A40C /* FavoriteBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBreed.swift; sourceTree = "<group>"; };
+		D7E4EACD2BF69D120020A40C /* Array+CatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+CatApp.swift"; sourceTree = "<group>"; };
 		FF424087C119A4DC4EB3C128 /* Pods-CatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatApp.debug.xcconfig"; path = "Target Support Files/Pods-CatApp/Pods-CatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,6 +313,7 @@
 			children = (
 				D72F09F62BF2309A008150D6 /* BreedsView */,
 				D70E6F602BF3CC8A0051DC5E /* BreedDetailView */,
+				D7E4EACB2BF69D030020A40C /* Utils */,
 				D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */,
 				D7DC2A5C2BF14AAD008BA68D /* ContentView.swift */,
 				D7DC2A5E2BF14AAD008BA68D /* Item.swift */,
@@ -362,6 +365,22 @@
 				D7E4EAC52BF67F7D0020A40C /* FavoriteBreed.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D7E4EACB2BF69D030020A40C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4EACC2BF69D080020A40C /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7E4EACC2BF69D080020A40C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D7E4EACD2BF69D120020A40C /* Array+CatApp.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +574,7 @@
 				D72F09EA2BF224C6008150D6 /* BreedImageResponse.swift in Sources */,
 				D72F09FF2BF23101008150D6 /* BreedsView.swift in Sources */,
 				D72F0A032BF25507008150D6 /* ImageService.swift in Sources */,
+				D7E4EACE2BF69D120020A40C /* Array+CatApp.swift in Sources */,
 				D70E6F652BF4025B0051DC5E /* SearchBar.swift in Sources */,
 				D72F09EF2BF22555008150D6 /* APIFactoryImpl.swift in Sources */,
 				D7DC2A5F2BF14AAD008BA68D /* Item.swift in Sources */,

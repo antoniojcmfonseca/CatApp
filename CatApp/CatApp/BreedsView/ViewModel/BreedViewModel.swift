@@ -38,6 +38,21 @@ class BreedViewModel: Identifiable, ObservableObject {
         loadImage()
     }
     
+    init (favoriteBreed: FavoriteBreed, imageService: ImageService) {
+        self.id = favoriteBreed.id
+        self.name = favoriteBreed.name
+        self.origin = favoriteBreed.origin
+        self.temperament = favoriteBreed.temperament
+        self.description = favoriteBreed.breedDescription
+        self.lifeSpan = favoriteBreed.lifeSpan
+        self.url = favoriteBreed.url
+        self.favorite = true
+        
+        self.imageService = imageService
+        
+        loadImage()
+    }
+    
     func loadImage() {
         Task {
             guard let url = url, let uiImage = await imageService.getImage(from: url) else {
@@ -54,3 +69,16 @@ class BreedViewModel: Identifiable, ObservableObject {
         favorite = state
     }
 }
+
+extension BreedViewModel: Hashable {
+    
+    static func == (lhs: BreedViewModel, rhs: BreedViewModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
+    }
+    
+}
+
