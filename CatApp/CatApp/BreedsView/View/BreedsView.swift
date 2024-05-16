@@ -50,7 +50,7 @@ struct AllBreedsView: View {
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.filteredBreeds) { breed in
-                            NavigationLink(destination: BreedDetailView(viewModel: breed)) {
+                            NavigationLink(destination: BreedDetailView(viewModel: viewModel, breedViewModel: breed)) {
                                 BreedCellView(viewModel: viewModel, breedViewModel: breed)
                                     .onAppear {
                                         viewModel.loadMoreBreedsIfNeeded(currentBreed: breed)
@@ -80,10 +80,14 @@ struct FavoriteBreedsView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
+                                .font(.headline)
+                                .padding()
+                
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.filteredFavoriteBreeds) { breed in
-                            NavigationLink(destination: BreedDetailView(viewModel: breed)) {
+                            NavigationLink(destination: BreedDetailView(viewModel: viewModel, breedViewModel: breed)) {
                                 BreedCellView(viewModel: viewModel, breedViewModel: breed)
                             }
                         }
