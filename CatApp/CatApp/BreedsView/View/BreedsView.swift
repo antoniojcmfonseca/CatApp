@@ -24,7 +24,7 @@ struct BreedsView: View {
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(viewModel.filteredBreeds) { breed in
                             NavigationLink(destination: BreedDetailView(viewModel: breed)) {
-                                BreedCellView(viewModel: breed)
+                                BreedCellView(viewModel: viewModel, breedViewModel: breed)
                             }
                         }
                     }
