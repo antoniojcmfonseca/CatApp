@@ -18,7 +18,7 @@ class BreedViewModel: Identifiable, ObservableObject {
     let url: String?
     
     @Published var image: Image = Image("placeholder")
-    var favorite: Bool
+    @Published var favorite: Bool
     
     private let imageService: ImageService
     
@@ -50,7 +50,7 @@ class BreedViewModel: Identifiable, ObservableObject {
         }
     }
     
-    func setFavoriteState() {
-        favorite = !favorite
+    func setFavorite(state: Bool) {
+        favorite = state
     }
 }

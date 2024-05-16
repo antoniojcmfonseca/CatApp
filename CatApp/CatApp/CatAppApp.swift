@@ -12,7 +12,7 @@ import SwiftData
 struct CatAppApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            FavoriteBreed.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -27,7 +27,7 @@ struct CatAppApp: App {
 
     var body: some Scene {
         
-        var breedsViewModel = BreedsViewModel(breedService: apiFactory.createBreedService(), imageService: apiFactory.createImageService())
+        var breedsViewModel = BreedsViewModel(breedService: apiFactory.createBreedService(), imageService: apiFactory.createImageService(), context: sharedModelContainer.mainContext)
         
         WindowGroup {
             BreedsView(viewModel: breedsViewModel)

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct BreedCellView: View {
     
-    @ObservedObject var viewModel: BreedViewModel
+    var viewModel: BreedsViewModel
+    @ObservedObject var breedViewModel: BreedViewModel
     @State(initialValue: Image("placeholder")) var image: Image
+    @State(initialValue: false) var favorite: Bool
     
     var body: some View {
         VStack {
@@ -21,19 +23,19 @@ struct BreedCellView: View {
                 .clipped()
             
             HStack {
-                Text(viewModel.name)
+                Text(breedViewModel.name)
                     .font(.caption)
                     .lineLimit(1)
                 Spacer()
                 Button(action: {
-                    if viewModel.favorite {
-                        //viewModel.removeFavorite(breed: breed)
+                    if favorite {
+                        viewModel.removeFavorite(breed: breedViewModel)
                     } else {
-                        //viewModel.addFavorite(breed: breed)
+                        viewModel.addFavorite(breed: breedViewModel)
                     }
                 }) {
-                    Image(systemName: viewModel.favorite ? "heart.fill" : "heart")
-                        .foregroundColor(viewModel.favorite ? .red : .gray)
+                    Image(systemName: favorite ? "heart.fill" : "heart")
+                        .foregroundColor(favorite ? .red : .gray)
                 }
             }
             .padding(.horizontal, 4)
@@ -44,10 +46,14 @@ struct BreedCellView: View {
         .shadow(radius: 5)
         .frame(width: 160, height: 260)  // Ensure the cell is square
         .onAppear {
-            image = viewModel.image
+            image = breedViewModel.image
+            favorite = breedViewModel.favorite
         }
-        .onChange(of: viewModel.image) { oldValue, newValue in
+        .onChange(of: breedViewModel.image) { oldValue, newValue in
             image = newValue
+        }
+        .onChange(of: breedViewModel.favorite) { oldValue, newValue in
+            favorite = newValue
         }
     }
 }
