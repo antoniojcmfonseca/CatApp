@@ -9,12 +9,13 @@ import SwiftUI
 
 struct BreedDetailView: View {
     
-    var viewModel: BreedViewModel
+    var viewModel: BreedsViewModel
+    @ObservedObject var breedViewModel: BreedViewModel
     
     var body: some View {
         VStack {
             HStack {
-                viewModel.image
+                breedViewModel.image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 300)
@@ -23,20 +24,38 @@ struct BreedDetailView: View {
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Origin: \(viewModel.origin)")
+                Text("Origin: \(breedViewModel.origin)")
                     .font(.headline)
-                Text("Temperament: \(viewModel.temperament)")
+                Text("Temperament: \(breedViewModel.temperament)")
                     .font(.headline)
-                Text("Description: \(viewModel.description)")
+                Text("Description: \(breedViewModel.description)")
                     .font(.headline)
-                Text("Lifespan: \(viewModel.lifeSpan)")
+                Text("Lifespan: \(breedViewModel.lifeSpan)")
                     .font(.headline)
             }
             
             Spacer()
+            
+            Button(action: {
+                if breedViewModel.favorite {
+                    viewModel.removeFavorite(breed: breedViewModel)
+                } else {
+                    viewModel.addFavorite(breed: breedViewModel)
+                }
+            }) {
+                Text(breedViewModel.favorite ? "Remove from Favorites" : "Add to Favorites")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(breedViewModel.favorite ? Color.red : Color.blue)
+                    .cornerRadius(10)
+            }
+            .padding(.top)
+            
+            Spacer()
         }
         .padding()
-        .navigationTitle(viewModel.name)
+        .navigationTitle(breedViewModel.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

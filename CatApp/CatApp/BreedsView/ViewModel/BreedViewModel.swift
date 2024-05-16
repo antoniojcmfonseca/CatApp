@@ -68,6 +68,18 @@ class BreedViewModel: Identifiable, ObservableObject {
     func setFavorite(state: Bool) {
         favorite = state
     }
+    
+    var higherAge: Int? {
+        let components = lifeSpan.split(separator: "-").map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        
+        if let lastComponent = components.last, let higherAge = Int(lastComponent) {
+            return higherAge
+        } else if let firstComponent = components.first, let lowerAge = Int(firstComponent) {
+            return lowerAge
+        }
+        
+        return nil
+    }
 }
 
 extension BreedViewModel: Hashable {

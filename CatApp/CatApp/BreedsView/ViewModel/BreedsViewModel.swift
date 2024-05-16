@@ -46,6 +46,11 @@ class BreedsViewModel: ObservableObject {
         return breeds.filter { favoriteBreedIDs.contains($0.id) }
     }
     
+    var averageLifespan: Double {
+        let lifespans = filteredFavoriteBreeds.compactMap { $0.higherAge }
+        guard !lifespans.isEmpty else { return 0 }
+        return Double(lifespans.reduce(0, +)) / Double(lifespans.count)
+    }
     
     func loadBreeds(page: Int = 0) {
         
