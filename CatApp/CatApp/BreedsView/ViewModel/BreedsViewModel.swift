@@ -11,6 +11,7 @@ import SwiftData
 class BreedsViewModel: ObservableObject {
     
     @Published var breeds: [BreedViewModel] = []
+    
     @Published var searchText: String = ""
     @Published var isLoading: Bool = false
     
@@ -19,7 +20,7 @@ class BreedsViewModel: ObservableObject {
     private var context: ModelContext
     
     private var favoriteBreeds: [FavoriteBreed] = []
-
+    
     private var currentPage = 0
     private var canLoadMorePages = true
     
@@ -38,6 +39,12 @@ class BreedsViewModel: ObservableObject {
             return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
     }
+    
+    var filteredFavoriteBreeds: [BreedViewModel] {
+        let favoriteBreedIDs = Set(favoriteBreeds.map { $0.id })
+        return breeds.filter { favoriteBreedIDs.contains($0.id) }
+    }
+    
     
     func loadBreeds(page: Int = 0) {
         
@@ -68,10 +75,11 @@ class BreedsViewModel: ObservableObject {
                 breedViewModel.append(BreedViewModel(breed: breed, imageService: imageService))
             }
             
-            let matchingBreeds = matchFavorites(breeds: breedViewModel)
+            let breedsVM = breedViewModel
             
             await MainActor.run {
-                breeds.append(contentsOf: breedVM)
+                let matchingBreeds = matchFavorites(breeds: breedsVM)
+                breeds.append(contentsOf: matchingBreeds)
             }
         }
     }
@@ -126,6 +134,7 @@ extension BreedsViewModel {
         
         do {
             favoriteBreeds = try context.fetch(fetchDescriptor)
+            breeds = matchFavorites(breeds: breeds)
         } catch {
             print("Failed to fetch favorite breeds: \(error.localizedDescription)")
         }
