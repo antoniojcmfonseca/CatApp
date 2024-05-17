@@ -64,7 +64,7 @@ class BreedsViewModel: ObservableObject {
             
             var listOfBreeds: [Breed] = []
             
-            var currentpage = self.currentPage
+            var currentPage = self.currentPage
             var canLoadMorePages = self.canLoadMorePages
             var isLoading = self.isLoading
             var isOfflineMode = self.isOfflineMode
@@ -93,7 +93,7 @@ class BreedsViewModel: ObservableObject {
             }
             
             let breedsVM = breedViewModel
-            let newPage = currentpage
+            let newPage = currentPage
             let newLoadMorePages = canLoadMorePages
             let newLoadingState = isLoading
             let newOfflineModeState = isOfflineMode

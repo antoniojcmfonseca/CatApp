@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A485C3A07A17F9C7B4CF367 /* Pods_CatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */; };
 		D70E6F5F2BF3CA4B0051DC5E /* BreedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E6F5E2BF3CA4B0051DC5E /* BreedCellView.swift */; };
 		D70E6F622BF3CC9E0051DC5E /* BreedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E6F612BF3CC9E0051DC5E /* BreedDetailView.swift */; };
 		D70E6F652BF4025B0051DC5E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70E6F642BF4025B0051DC5E /* SearchBar.swift */; };
@@ -28,6 +27,8 @@
 		D72F0A032BF25507008150D6 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F0A022BF25507008150D6 /* ImageService.swift */; };
 		D72F0A052BF25537008150D6 /* ImageServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F0A042BF25537008150D6 /* ImageServiceImpl.swift */; };
 		D7B4E4EE2BF755C400D63DE3 /* UIDevice+CatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4E4ED2BF755C400D63DE3 /* UIDevice+CatApp.swift */; };
+		D7B4E4F12BF770DE00D63DE3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D7B4E4F02BF770DE00D63DE3 /* Alamofire */; };
+		D7B4E4F42BF770E900D63DE3 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = D7B4E4F32BF770E900D63DE3 /* AlamofireImage */; };
 		D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */; };
 		D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */; };
 		D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */; };
@@ -60,8 +61,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatApp.release.xcconfig"; path = "Target Support Files/Pods-CatApp/Pods-CatApp.release.xcconfig"; sourceTree = "<group>"; };
 		D70E6F5E2BF3CA4B0051DC5E /* BreedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCellView.swift; sourceTree = "<group>"; };
 		D70E6F612BF3CC9E0051DC5E /* BreedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailView.swift; sourceTree = "<group>"; };
 		D70E6F642BF4025B0051DC5E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 		D7DC2A792BF14AAE008BA68D /* CatAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D7E4EAC52BF67F7D0020A40C /* FavoriteBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBreed.swift; sourceTree = "<group>"; };
 		D7E4EACD2BF69D120020A40C /* Array+CatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+CatApp.swift"; sourceTree = "<group>"; };
-		FF424087C119A4DC4EB3C128 /* Pods-CatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatApp.debug.xcconfig"; path = "Target Support Files/Pods-CatApp/Pods-CatApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A485C3A07A17F9C7B4CF367 /* Pods_CatApp.framework in Frameworks */,
+				D7B4E4F12BF770DE00D63DE3 /* Alamofire in Frameworks */,
+				D7B4E4F42BF770E900D63DE3 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,23 +125,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA2F93A4341E20CBD9118EB4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2C7211B208F989F01E9D7E68 /* Pods_CatApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BACA396C8265E91A3A4F28E3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FF424087C119A4DC4EB3C128 /* Pods-CatApp.debug.xcconfig */,
-				65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D70E6F602BF3CC8A0051DC5E /* BreedDetailView */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,8 +277,6 @@
 				D7DC2A6C2BF14AAE008BA68D /* CatAppTests */,
 				D7DC2A762BF14AAE008BA68D /* CatAppUITests */,
 				D7DC2A582BF14AAD008BA68D /* Products */,
-				BACA396C8265E91A3A4F28E3 /* Pods */,
-				AA2F93A4341E20CBD9118EB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -393,17 +373,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7DC2A7D2BF14AAE008BA68D /* Build configuration list for PBXNativeTarget "CatApp" */;
 			buildPhases = (
-				91EFD4A5F0BCCA18446783FB /* [CP] Check Pods Manifest.lock */,
 				D7DC2A532BF14AAD008BA68D /* Sources */,
 				D7DC2A542BF14AAD008BA68D /* Frameworks */,
 				D7DC2A552BF14AAD008BA68D /* Resources */,
-				865ACFD152AC28B9EC309098 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CatApp;
+			packageProductDependencies = (
+				D7B4E4F02BF770DE00D63DE3 /* Alamofire */,
+				D7B4E4F32BF770E900D63DE3 /* AlamofireImage */,
+			);
 			productName = CatApp;
 			productReference = D7DC2A572BF14AAD008BA68D /* CatApp.app */;
 			productType = "com.apple.product-type.application";
@@ -476,6 +458,10 @@
 				Base,
 			);
 			mainGroup = D7DC2A4E2BF14AAD008BA68D;
+			packageReferences = (
+				D7B4E4EF2BF770DD00D63DE3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D7B4E4F22BF770E900D63DE3 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = D7DC2A582BF14AAD008BA68D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -513,48 +499,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		865ACFD152AC28B9EC309098 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatApp/Pods-CatApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		91EFD4A5F0BCCA18446783FB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CatApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D7DC2A532BF14AAD008BA68D /* Sources */ = {
@@ -744,7 +688,6 @@
 		};
 		D7DC2A7E2BF14AAE008BA68D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF424087C119A4DC4EB3C128 /* Pods-CatApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -775,7 +718,6 @@
 		};
 		D7DC2A7F2BF14AAE008BA68D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65A36BD800DEC2D76F97F0BD /* Pods-CatApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -920,6 +862,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7B4E4EF2BF770DD00D63DE3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.9.1;
+			};
+		};
+		D7B4E4F22BF770E900D63DE3 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7B4E4F02BF770DE00D63DE3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7B4E4EF2BF770DD00D63DE3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D7B4E4F32BF770E900D63DE3 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7B4E4F22BF770E900D63DE3 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D7DC2A4F2BF14AAD008BA68D /* Project object */;
 }
