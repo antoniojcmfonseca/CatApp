@@ -25,12 +25,4 @@ class NetworkManagerImpl: NetworkManager {
         let request = AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: headers)
         return try await request.serializingDecodable(T.self).value
     }
-    
-    func postRequest<T: Decodable>(path: String, parameters: [String: Any]?) async throws -> T {
-        let url = baseUrl + path
-        let headers: HTTPHeaders = ["x-api-key": apiKey]
-        
-        let request = AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-        return try await request.serializingDecodable(T.self).value
-    }
 }
