@@ -47,7 +47,7 @@ The app is structured as follows:
             * **/Services** - Contains service protocols definitions
                 * **/BreedService** - Service to get breeds results from network
                 * **/ImageService** - Service to download images from network
-            * **/Models*
+            * **/Models**
                 * **/Breed** - Model of the breed
                 * **/BreedImage** - Model of the breed image
     * **/Implementation** - Contains the implementations of the exposed Core services
