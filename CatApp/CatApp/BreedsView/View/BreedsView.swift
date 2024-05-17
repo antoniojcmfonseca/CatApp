@@ -11,37 +11,37 @@ struct BreedsView: View {
     
     @StateObject var viewModel: BreedsViewModel
     
-    let columns = [
-        GridItem(.flexible(), spacing: 8),
-        GridItem(.flexible(), spacing: 8)
-    ]
-    
     var body: some View {
-        if viewModel.isOfflineMode {
-            FavoriteBreedsView(viewModel: viewModel)
-        } else {
-            TabView {
-                AllBreedsView(viewModel: viewModel)
-                    .tabItem {
-                        Label("All Breeds", systemImage: "list.bullet")
-                    }
-                
-                FavoriteBreedsView(viewModel: viewModel)
-                    .tabItem {
-                        Label("Favorite Breeds", systemImage: "heart")
-                    }
+        NavigationView {
+            if viewModel.isOfflineMode {
+                FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
+            } else {
+                TabView {
+                    AllBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
+                        .tabItem {
+                            Label("All Breeds", systemImage: "list.bullet")
+                        }
+                    
+                    FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
+                        .tabItem {
+                            Label("Favorites", systemImage: "heart")
+                        }
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    public func gridColumns(isIPad: Bool) -> [GridItem] {
+        return Array(repeating: GridItem(.flexible(), spacing: 16), count: isIPad ? 3 : 2)
     }
 }
 
 struct AllBreedsView: View {
-    @ObservedObject var viewModel: BreedsViewModel
     
-    let columns = [
-        GridItem(.flexible(), spacing: 16),
-        GridItem(.flexible(), spacing: 16)
-    ]
+    @ObservedObject var viewModel: BreedsViewModel
+    let columns: [GridItem]
     
     var body: some View {
         NavigationView {
@@ -70,19 +70,25 @@ struct AllBreedsView: View {
 }
 
 struct FavoriteBreedsView: View {
-    @ObservedObject var viewModel: BreedsViewModel
     
-    let columns = [
-        GridItem(.flexible(), spacing: 16),
-        GridItem(.flexible(), spacing: 16)
-    ]
+    @ObservedObject var viewModel: BreedsViewModel
+    let columns: [GridItem]
     
     var body: some View {
         NavigationView {
             VStack {
-                Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
-                                .font(.headline)
-                                .padding()
+                
+                var textLabel = ""
+                
+                if viewModel.filteredFavoriteBreeds.isEmpty {
+                    Text("No favorite breeds set")
+                        .font(.headline)
+                        .padding()
+                } else if viewModel.averageLifespan > 0 {
+                    Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
+                        .font(.headline)
+                        .padding()
+                }
                 
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
@@ -94,7 +100,7 @@ struct FavoriteBreedsView: View {
                     }
                     .padding()
                 }
-                .navigationTitle("Favorite Breeds")
+                .navigationTitle("Favorites")
             }
         }
     }
