@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AlamofireImage
 
 class MockNetworkManager: NetworkManager {
     
@@ -22,6 +23,18 @@ class MockNetworkManager: NetworkManager {
         return try! JSONDecoder().decode(T.self, from: data)
     }
     
-//    func postRequest<T>(path: String, parameters: [String : Any]?) async throws -> T where T : Decodable {
-//    }
+    func downloadImage(from url: String) async -> Image? {
+
+            if shouldReturnError {
+                return nil
+            }
+
+            return Image(systemName: "photo")
+        }
+
+        func imageCache() async -> AutoPurgingImageCache {
+            await MainActor.run {
+                return AutoPurgingImageCache()
+            }
+        }
 }

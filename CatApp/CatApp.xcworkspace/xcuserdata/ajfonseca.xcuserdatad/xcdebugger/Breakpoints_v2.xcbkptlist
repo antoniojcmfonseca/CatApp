@@ -7,33 +7,50 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DC3AB692-0890-49DD-BBC3-F5A2FE1646E4"
+            uuid = "EFE0865F-6330-4CD1-B55F-906DA8A1C7A2"
             shouldBeEnabled = "Yes"
+            condition = "isOfflineMode == true"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CatApp/BreedsView/ViewModel/BreedsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "loadMoreBreedsIfNeeded(currentBreed:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ABD50402-D124-446F-9554-EE37C54F4488"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CatApp/BreedsView/ViewModel/BreedsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "loadBreeds(page:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EFE0865F-6330-4CD1-B55F-906DA8A1C7A2 - a0eaf20ee35bbf38"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CatApp.BreedsViewModel.loadBreeds(page: Swift.Int) -&gt; ()"
+                  moduleName = "CatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajfonseca/Documents/GitHub/CatApp/CatApp/CatApp/BreedsView/ViewModel/BreedsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "752">
+               </Location>
+               <Location
+                  uuid = "EFE0865F-6330-4CD1-B55F-906DA8A1C7A2 - 37d76fc71f1280b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in CatApp.BreedsViewModel.loadBreeds(page: Swift.Int) -&gt; ()"
+                  moduleName = "CatApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ajfonseca/Documents/GitHub/CatApp/CatApp/CatApp/BreedsView/ViewModel/BreedsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "544">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

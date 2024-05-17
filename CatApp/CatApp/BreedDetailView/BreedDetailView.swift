@@ -25,7 +25,7 @@ struct BreedDetailView: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 350, height: 350)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
-                        .shadow(radius: 10)
+                        .shadow(color: Color.primary.opacity(0.2), radius: 10)
                         .padding()
                     
                     VStack(alignment: .leading) {
@@ -50,7 +50,7 @@ struct BreedDetailView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 250, height: 250)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
-                            .shadow(radius: 10)
+                            .shadow(color: Color.primary.opacity(0.2), radius: 10)
                             .padding()
                     }
                     
