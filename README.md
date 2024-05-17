@@ -36,7 +36,7 @@ The app is structured as follows:
 * **/Utils** - Helpers
     * **/Extensions** - Extensions of native components
         * **/Array+CatApp** - Extension of Array to help remove duplicates
-        * **/UIDevice+CattApp** - Extension of UIDevice to check if the current device is iPhone or iPad
+        * **/UIDevice+CatApp** - Extension of UIDevice to check if the current device is iPhone or iPad
 
 * **/Core** - Contains the core functionalities of the app.
     * **/Interface** - Contains the exposed interfaces for the UI
