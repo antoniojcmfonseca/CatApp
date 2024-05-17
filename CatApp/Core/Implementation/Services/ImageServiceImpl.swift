@@ -14,7 +14,7 @@ class ImageServiceImpl: ImageService {
         
         var image: UIImage?
         
-        let imageCache = AutoPurgingImageCache()
+        let imageCache = await ImageServiceImpl.imageCache()
         
         if let image = imageCache.image(withIdentifier: url) {
             return image
@@ -41,6 +41,12 @@ class ImageServiceImpl: ImageService {
                     continuation.resume(returning: nil)
                 }
             }
+        }
+    }
+    
+    private static func imageCache() async -> AutoPurgingImageCache {
+        await MainActor.run {
+            return AutoPurgingImageCache()
         }
     }
 }

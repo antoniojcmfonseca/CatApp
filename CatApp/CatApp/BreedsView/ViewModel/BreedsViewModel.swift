@@ -64,17 +64,22 @@ class BreedsViewModel: ObservableObject {
             
             var listOfBreeds: [Breed] = []
             
+            var currentpage = self.currentPage
+            var canLoadMorePages = self.canLoadMorePages
+            var isLoading = self.isLoading
+            var isOfflineMode = self.isOfflineMode
+            
             do {
                 listOfBreeds = try await breedService.getBreeds(limit: 10, page: currentPage)
                 
-                self.currentPage = page
-                self.canLoadMorePages = !listOfBreeds.isEmpty
-                self.isLoading = false
-                self.isOfflineMode = self.breeds.isEmpty && listOfBreeds.isEmpty
+                currentPage = page
+                canLoadMorePages = !listOfBreeds.isEmpty
+                isLoading = false
+                isOfflineMode = self.breeds.isEmpty && listOfBreeds.isEmpty
             } catch let error {
                 print(error)
-                self.isLoading = false
-                self.isOfflineMode = true
+                isLoading = false
+                isOfflineMode = true
             }
             
             var breedViewModel: [BreedViewModel] = []
@@ -88,6 +93,10 @@ class BreedsViewModel: ObservableObject {
             }
             
             let breedsVM = breedViewModel
+            let newPage = currentpage
+            let newLoadMorePages = canLoadMorePages
+            let newLoadingState = isLoading
+            let newOfflineModeState = isOfflineMode
             
             await MainActor.run {
                 let matchingBreeds = matchFavorites(breeds: breedsVM)
@@ -96,6 +105,11 @@ class BreedsViewModel: ObservableObject {
                 updatedBreeds.append(contentsOf: matchingBreeds)
                 
                 breeds = updatedBreeds.removingDuplicatesById()
+                
+                self.currentPage = newPage
+                self.canLoadMorePages = newLoadMorePages
+                self.isLoading = newLoadingState
+                self.isOfflineMode = newOfflineModeState
                 
             }
         }
