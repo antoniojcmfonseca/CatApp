@@ -35,7 +35,7 @@ final class BreedsServiceTest: XCTestCase {
         mockNetworkManager.jsonData = try? Data(contentsOf: url)
         
         do {
-            let breeds = try await service.getBreeds()
+            let breeds = try await service.getBreeds(limit: 1, page: 0)
             XCTAssertEqual(breeds.count, 1, "Should return one breed")
             XCTAssertEqual(breeds.first?.name, "Abyssinian", "Fetched breed's name should be 'Abyssinian'")
             XCTAssertEqual(breeds.first?.origin, "Egypt", "Fetched breed's origin should be 'Egypt'")
@@ -49,7 +49,7 @@ final class BreedsServiceTest: XCTestCase {
         mockNetworkManager.shouldReturnError = true
         
         do {
-            let _ = try await service.getBreeds()
+            let _ = try await service.getBreeds(limit: 1, page: 0)
             XCTFail("Expected error but got success")
         } catch {
             // Success if an error is thrown
