@@ -10,9 +10,9 @@ import AlamofireImage
 
 class ImageServiceImpl: ImageService {
     
-    func getImage(from url: String) async -> UIImage? {
+    func getImage(from url: String) async -> Image? {
         
-        var image: UIImage?
+        var image: Image?
         
         let imageCache = await ImageServiceImpl.imageCache()
         
@@ -29,7 +29,7 @@ class ImageServiceImpl: ImageService {
         return image
     }
     
-    private func downloadImage(from url: String) async -> UIImage? {
+    private func downloadImage(from url: String) async -> Image? {
         
         await withCheckedContinuation { continuation in
             AF.request(url).responseImage { respone in
