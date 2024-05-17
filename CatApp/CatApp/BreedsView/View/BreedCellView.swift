@@ -16,17 +16,26 @@ struct BreedCellView: View {
     
     var body: some View {
         VStack {
-            image
+            
+            Spacer()
+            
+            breedViewModel.image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 160, height: 200)
-                .clipped()
+                .frame(width: 150, height: 150)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .shadow(radius: 10)
             
             HStack {
-                Text(breedViewModel.name)
-                    .font(.caption)
-                    .lineLimit(1)
+                
                 Spacer()
+                
+                Text(breedViewModel.name)
+                    .foregroundStyle(.black)
+                    .font(.caption)
+                
+                Spacer()
+                
                 Button(action: {
                     if favorite {
                         viewModel.removeFavorite(breed: breedViewModel)
@@ -37,14 +46,17 @@ struct BreedCellView: View {
                     Image(systemName: favorite ? "heart.fill" : "heart")
                         .foregroundColor(favorite ? .red : .gray)
                 }
+                
+                Spacer()
             }
-            .padding(.horizontal, 4)
-            .padding(.bottom, 4)
+            .padding(.top, 8)
+            
+            Spacer()
         }
         .background(Color.white)
-        .cornerRadius(8)
+        .cornerRadius(10)
         .shadow(radius: 5)
-        .frame(width: 160, height: 260)  // Ensure the cell is square
+        .frame(width: 180, height: 200)
         .onAppear {
             image = breedViewModel.image
             favorite = breedViewModel.favorite

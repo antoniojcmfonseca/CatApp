@@ -27,6 +27,7 @@
 		D72F0A012BF23F25008150D6 /* BreedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F0A002BF23F25008150D6 /* BreedViewModel.swift */; };
 		D72F0A032BF25507008150D6 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F0A022BF25507008150D6 /* ImageService.swift */; };
 		D72F0A052BF25537008150D6 /* ImageServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F0A042BF25537008150D6 /* ImageServiceImpl.swift */; };
+		D7B4E4EE2BF755C400D63DE3 /* UIDevice+CatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4E4ED2BF755C400D63DE3 /* UIDevice+CatApp.swift */; };
 		D7D6DB922BF15CEC009F4B58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */; };
 		D7D6DB9E2BF16E1B009F4B58 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */; };
 		D7DC2A5B2BF14AAD008BA68D /* CatAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DC2A5A2BF14AAD008BA68D /* CatAppApp.swift */; };
@@ -80,6 +81,7 @@
 		D72F0A002BF23F25008150D6 /* BreedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewModel.swift; sourceTree = "<group>"; };
 		D72F0A022BF25507008150D6 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		D72F0A042BF25537008150D6 /* ImageServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServiceImpl.swift; sourceTree = "<group>"; };
+		D7B4E4ED2BF755C400D63DE3 /* UIDevice+CatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+CatApp.swift"; sourceTree = "<group>"; };
 		D7D6DB912BF15CEC009F4B58 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D7D6DB9D2BF16E1B009F4B58 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		D7DC2A572BF14AAD008BA68D /* CatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E4EACD2BF69D120020A40C /* Array+CatApp.swift */,
+				D7B4E4ED2BF755C400D63DE3 /* UIDevice+CatApp.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E4EAC62BF67F7D0020A40C /* FavoriteBreed.swift in Sources */,
+				D7B4E4EE2BF755C400D63DE3 /* UIDevice+CatApp.swift in Sources */,
 				D72F09E82BF224B6008150D6 /* BreedResponse.swift in Sources */,
 				D72F09E42BF224A3008150D6 /* Breed.swift in Sources */,
 				D72F0A052BF25537008150D6 /* ImageServiceImpl.swift in Sources */,
