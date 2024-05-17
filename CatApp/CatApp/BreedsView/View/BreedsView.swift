@@ -59,7 +59,6 @@ struct AllBreedsView: View {
                         }
                     }
                     .padding()
-                    .animation(.smooth, value: viewModel.filteredBreeds)
                 }
                 .navigationTitle("All Breeds")
                 .onAppear {
@@ -79,18 +78,17 @@ struct FavoriteBreedsView: View {
         NavigationView {
             VStack {
                 
-                HStack {
-                    if viewModel.filteredFavoriteBreeds.isEmpty {
-                        Text("No favorite breeds set")
-                            .font(.headline)
-                            .padding()
-                    } else if viewModel.averageLifespan > 0 {
-                        Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
-                            .font(.headline)
-                            .padding()
-                    }
+                var textLabel = ""
+                
+                if viewModel.filteredFavoriteBreeds.isEmpty {
+                    Text("No favorite breeds set")
+                        .font(.headline)
+                        .padding()
+                } else if viewModel.averageLifespan > 0 {
+                    Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
+                        .font(.headline)
+                        .padding()
                 }
-                .animation(.smooth, value: viewModel.filteredFavoriteBreeds)
                 
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
@@ -101,7 +99,6 @@ struct FavoriteBreedsView: View {
                         }
                     }
                     .padding()
-                    .animation(.smooth, value: viewModel.filteredFavoriteBreeds)
                 }
                 .navigationTitle("Favorites")
             }

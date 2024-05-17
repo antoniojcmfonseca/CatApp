@@ -21,4 +21,7 @@ class MockNetworkManager: NetworkManager {
         guard let data = jsonData else { throw NSError(domain: "", code: 1, userInfo: [NSLocalizedDescriptionKey: "Mock error - no data found"]) }
         return try! JSONDecoder().decode(T.self, from: data)
     }
+    
+//    func postRequest<T>(path: String, parameters: [String : Any]?) async throws -> T where T : Decodable {
+//    }
 }

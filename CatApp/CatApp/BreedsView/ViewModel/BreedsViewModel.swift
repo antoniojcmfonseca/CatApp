@@ -64,13 +64,15 @@ class BreedsViewModel: ObservableObject {
             
             var listOfBreeds: [Breed] = []
             
+            var currentPage = self.currentPage
             var canLoadMorePages = self.canLoadMorePages
             var isLoading = self.isLoading
             var isOfflineMode = self.isOfflineMode
             
             do {
-                listOfBreeds = try await breedService.getBreeds(limit: 10, page: page)
+                listOfBreeds = try await breedService.getBreeds(limit: 10, page: currentPage)
                 
+                currentPage = page
                 canLoadMorePages = !listOfBreeds.isEmpty
                 isLoading = false
                 isOfflineMode = self.breeds.isEmpty && listOfBreeds.isEmpty
@@ -91,6 +93,7 @@ class BreedsViewModel: ObservableObject {
             }
             
             let breedsVM = breedViewModel
+            let newPage = currentPage
             let newLoadMorePages = canLoadMorePages
             let newLoadingState = isLoading
             let newOfflineModeState = isOfflineMode
@@ -103,7 +106,7 @@ class BreedsViewModel: ObservableObject {
                 
                 breeds = updatedBreeds.removingDuplicatesById()
                 
-                self.currentPage = page
+                self.currentPage = newPage
                 self.canLoadMorePages = newLoadMorePages
                 self.isLoading = newLoadingState
                 self.isOfflineMode = newOfflineModeState
@@ -129,16 +132,7 @@ extension BreedsViewModel {
         
         breed.setFavorite(state: true)
         
-        let favorite = FavoriteBreed(
-            id: breed.id,
-            name: breed.name,
-            origin: breed.origin,
-            temperament: breed.temperament,
-            breedDescription: breed.description,
-            lifeSpan: breed.lifeSpan,
-            url: breed.url
-        )
-        
+        let favorite = FavoriteBreed(id: breed.id, name: breed.name, origin: breed.origin, temperament: breed.temperament, breedDescription: breed.description, lifeSpan: breed.lifeSpan, url: breed.url)
         context.insert(favorite)
         saveContext()
         fetchFavoriteBreeds()

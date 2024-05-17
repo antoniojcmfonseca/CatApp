@@ -9,4 +9,5 @@ import Foundation
 
 protocol NetworkManager {
     func getRequest<T: Decodable>(path: String, parameters: [String: Any]?) async throws -> T
+    //func postRequest<T: Decodable>(path: String, parameters: [String: Any]?) async throws -> T
 }
