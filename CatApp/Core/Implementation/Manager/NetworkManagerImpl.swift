@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import AlamofireImage
 
 class NetworkManagerImpl: NetworkManager {
     
@@ -14,9 +15,6 @@ class NetworkManagerImpl: NetworkManager {
     private let baseUrl = "https://api.thecatapi.com/"
     private let apiKey = "live_I02O9MMow6af2OG4RNhXHQLTQvOsIYGUwzh7lQe2XyEEy1aE6nzlvy7LQaaQLj1Y"
     
-    init() {
-        
-    }
     
     func getRequest<T: Decodable>(path: String, parameters: [String: Any]?) async throws -> T {
         let url = baseUrl + path
@@ -26,11 +24,23 @@ class NetworkManagerImpl: NetworkManager {
         return try await request.serializingDecodable(T.self).value
     }
     
-    func postRequest<T: Decodable>(path: String, parameters: [String: Any]?) async throws -> T {
-        let url = baseUrl + path
-        let headers: HTTPHeaders = ["x-api-key": apiKey]
-        
-        let request = AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-        return try await request.serializingDecodable(T.self).value
+    func downloadImage(from url: String) async -> Image? {
+        await withCheckedContinuation { continuation in
+            AF.request(url).responseImage { respone in
+                switch(respone.result) {
+                case .success(let loadedImage):
+                    continuation.resume(returning: loadedImage)
+                case .failure(let error):
+                    print("Error loading image: \(error.localizedDescription)")
+                    continuation.resume(returning: nil)
+                }
+            }
+        }
+    }
+    
+    func imageCache() async -> AutoPurgingImageCache {
+        await MainActor.run {
+            return AutoPurgingImageCache()
+        }
     }
 }

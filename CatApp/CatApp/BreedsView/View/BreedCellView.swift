@@ -31,7 +31,7 @@ struct BreedCellView: View {
                 Spacer()
                 
                 Text(breedViewModel.name)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.breedAppText)
                     .font(.caption)
                 
                 Spacer()
@@ -53,9 +53,9 @@ struct BreedCellView: View {
             
             Spacer()
         }
-        .background(Color.white)
+        .background(Color(.systemBackground))
         .cornerRadius(10)
-        .shadow(radius: 5)
+        .shadow(color: Color.primary.opacity(0.2), radius: 10)
         .frame(width: 180, height: 200)
         .onAppear {
             image = breedViewModel.image

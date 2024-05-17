@@ -14,7 +14,7 @@ class APIFactoryImpl: APIFactory {
     }
     
     func createImageService() -> ImageService {
-        ImageServiceImpl()
+        ImageServiceImpl(networkmanager: createNetworkManager())
     }
     
     private func createNetworkManager() -> NetworkManager {

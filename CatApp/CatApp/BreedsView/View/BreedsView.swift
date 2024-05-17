@@ -12,25 +12,23 @@ struct BreedsView: View {
     @StateObject var viewModel: BreedsViewModel
     
     var body: some View {
-        NavigationView {
-            if viewModel.isOfflineMode {
-                FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
-            } else {
-                TabView {
-                    AllBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
-                        .tabItem {
-                            Label("All Breeds", systemImage: "list.bullet")
-                        }
-                    
-                    FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
-                        .tabItem {
-                            Label("Favorites", systemImage: "heart")
-                        }
-                }
+        if viewModel.isOfflineMode {
+            FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
                 .navigationViewStyle(StackNavigationViewStyle())
+        } else {
+            TabView {
+                AllBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
+                    .tabItem {
+                        Label("All Breeds", systemImage: "list.bullet")
+                    }
+                
+                FavoriteBreedsView(viewModel: viewModel, columns: gridColumns(isIPad: UIDevice.isIPad))
+                    .tabItem {
+                        Label("Favorites", systemImage: "heart")
+                    }
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     public func gridColumns(isIPad: Bool) -> [GridItem] {
@@ -59,6 +57,7 @@ struct AllBreedsView: View {
                         }
                     }
                     .padding()
+                    .animation(.smooth, value: viewModel.filteredFavoriteBreeds)
                 }
                 .navigationTitle("All Breeds")
                 .onAppear {
@@ -78,17 +77,33 @@ struct FavoriteBreedsView: View {
         NavigationView {
             VStack {
                 
-                var textLabel = ""
-                
-                if viewModel.filteredFavoriteBreeds.isEmpty {
-                    Text("No favorite breeds set")
-                        .font(.headline)
-                        .padding()
-                } else if viewModel.averageLifespan > 0 {
-                    Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
-                        .font(.headline)
-                        .padding()
+                if viewModel.isOfflineMode {
+                    HStack {
+                        
+                        Spacer()
+                        
+                        Text("Offline mode")
+                            .font(.headline)
+                            .foregroundColor(.breedAppText)
+                            .padding(.bottom, 8)
+                        
+                        Spacer()
+                    }
+                    .fadeBackground()
                 }
+                
+                HStack {
+                    if viewModel.filteredFavoriteBreeds.isEmpty {
+                        Text("No favorite breeds set")
+                            .font(.headline)
+                            .padding()
+                    } else if viewModel.averageLifespan > 0 {
+                        Text("Average Lifespan: \(String(format: "%.1f", viewModel.averageLifespan)) years")
+                            .font(.headline)
+                            .padding()
+                    }
+                }
+                .animation(.smooth, value: viewModel.filteredFavoriteBreeds)
                 
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 16) {
@@ -99,6 +114,7 @@ struct FavoriteBreedsView: View {
                         }
                     }
                     .padding()
+                    .animation(.smooth, value: viewModel.filteredFavoriteBreeds)
                 }
                 .navigationTitle("Favorites")
             }
