@@ -14,7 +14,7 @@ CatApp is a Swift application designed to provide a list of cat breeds with a de
 
 * Alamofire - Used to interact with RESTful APIs and handle network requests in a simplified way with request and response handling.
 
-* AlamofireImage - Used for downloading and caching images from the internet. It is used in the `ImageService` protocol to define the `getImage(from url: String) async -> Image?` function.
+* AlamofireImage - Used for downloading and caching images from the internet.
 
 ## Code Structure
 
